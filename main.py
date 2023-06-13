@@ -26,7 +26,17 @@ async def search(ctx, text: str):
     url_new = f' {url}{text.replace(" ", "+")}'
     print(url_new)
     embed = discord.Embed(title="result", timestamp=discord.utils.utcnow(), )
+    embed.set_thumbnail(url=ctx.guild.icon)
     embed.add_field(name='URL', value=url_new)
+    await ctx.respond(embed=embed)
+
+
+@bot.slash_command(name='info', description='get info about the bot')
+async def info(ctx):
+    embed= discord.Embed(title='info', timestamp=discord.utils.utcnow(), )
+    embed.set_thumbnail(url=ctx.guild.icon)
+    embed.add_field(name='general info.', value='this bot is made by the team of USF and hosted by blue atomic')
+    embed.add_field(name='invite', value='https://discord.com/invite/nXWJtMg3nT')
     await ctx.respond(embed=embed)
 
 
