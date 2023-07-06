@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 url = 'https://letmegooglethat.com/?q='
 
-bot = commands.Bot(debug_guilds=[1086638377534754897], status=discord.Status.dnd,
-                   activity=discord.Activity(type=discord.ActivityType.listening, name="can you google?"))
+bot = commands.Bot(command_prefix=["/"],debug_guilds=[1086638377534754897], status=discord.Status.dnd,
+                   activity=discord.Activity(type=discord.ActivityType.listening, name="Can you Google?"))
 
 
 @bot.listen()
@@ -20,26 +20,24 @@ async def ping(ctx):
     await ctx.respond(f"Pong! Latency is {bot.latency}")
 
 
-@bot.slash_command(name='url', description='get the lmgt link for what you want')
+@bot.slash_command(name='url', description='Get the Let me Google that for you link for what you want')
 async def search(ctx, text: str):
     print(f'new request with {text}')
     url_new = f' {url}{text.replace(" ", "+")}'
     print(url_new)
-    embed = discord.Embed(title="result", timestamp=discord.utils.utcnow(), )
+    embed = discord.Embed(title="Result", timestamp=discord.utils.utcnow(), )
     embed.set_thumbnail(url=ctx.guild.icon)
     embed.add_field(name='URL', value=url_new)
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name='info', description='get info about the bot')
+@bot.slash_command(name='info', description='Get info about the bot')
 async def info(ctx):
-    embed= discord.Embed(title='info', timestamp=discord.utils.utcnow(), )
+    embed= discord.Embed(title='Googlit Informations', timestamp=discord.utils.utcnow(), )
     embed.set_thumbnail(url=ctx.guild.icon)
-    embed.add_field(name='general info.', value='this bot is made by the team of USF and hosted by blue atomic')
-    embed.add_field(name='invite', value='https://discord.com/invite/nXWJtMg3nT')
+    embed.add_field(name='General info', value='This Bot is made by the USF Development Team')
+    embed.add_field(name='Invite', value='https://discord.com/invite/nXWJtMg3nT')
     await ctx.respond(embed=embed)
 
 
-
-
-bot.run(os.getenv('tolken'))
+bot.run(os.getenv('TOKEN'))
