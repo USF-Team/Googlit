@@ -7,3 +7,7 @@ Googlit | Generate Google that for you links
 `/info` Replies with informations about the BOT
 
 `/ping` Replies with the Bot latency
+
+**Updating the Terms of Service and the Privacy Policy...**
+
+Info: We don't save your data in anyway
