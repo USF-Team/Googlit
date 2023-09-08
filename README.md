@@ -11,8 +11,4 @@ Googlit | Generate Google that for you links
 **Updating the Terms of Service and the Privacy Policy...**
 
 Info: We don't save your data in anyway
-
-# Terms of Service
-# Privacy Policy
-
 # ⚠️ The project is no longer maintained by the USF Development Team.
